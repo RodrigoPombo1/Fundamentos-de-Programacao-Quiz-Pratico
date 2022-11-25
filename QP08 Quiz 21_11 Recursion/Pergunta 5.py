@@ -12,28 +12,28 @@ def soup(matrix, word):
 
 def soup2(matrix, word, line, column):
     
-    #caso base (em q se deve parar)
+    #base case
     if word == "":
         return True
     
     #verificar linha acima, linha abaixo, coluna a esquerda coluna a direita
     if line != 0:
-        #verificar cima
+        #check top
         if matrix[line - 1][column] == word[0]:
             return soup2(matrix, word[1:], line - 1, column)
     
     if line != len(matrix) - 1:
-        #verificar baixo
+        #check bottom
         if matrix[line + 1][column] == word[0]:
             return soup2(matrix, word[1:], line + 1, column)
     
     if column != 0:
-        #verificar esquerda
+        #check left
         if matrix[line][column - 1] == word[0]:
             return soup2(matrix, word[1:], line, column - 1)
         
     if column != len(matrix[0]) - 1:
-        #verificar direita
+        #check right
         if matrix[line][column + 1] == word[0]:
             return soup2(matrix, word[1:], line, column + 1)
     return False
