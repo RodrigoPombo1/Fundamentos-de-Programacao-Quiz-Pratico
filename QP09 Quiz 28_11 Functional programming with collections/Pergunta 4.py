@@ -1,0 +1,2 @@
+def x_union(list1, list2):
+    return list(filter(lambda x: True if (x[0] not in map(lambda x: x[0],list2)) else False, list1)) + list(filter(lambda x: True if (x[0] not in map(lambda x: x[0],list1)) else False, list2))
